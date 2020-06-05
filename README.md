@@ -1,0 +1,1 @@
+## Udacity Capstone Project for Cloud DevOps. This project implements CI CD ipeline using Jenkins and containerization and orchestrations using Docker and Kubernetes
