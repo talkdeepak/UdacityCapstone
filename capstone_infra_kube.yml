@@ -56,7 +56,7 @@ Resources:
             sudo -i
             minikube start --vm-driver=none
             minikube status
-            git clone https://github.com/arya-hemanshu/CapstoneProject.git
+            git clone https://github.com/talkdeepak/UdacityCapstone.git
             cd CapstoneProject/
             ./run_kubernetes.sh
         ImageId: ami-06358f49b5839867c
