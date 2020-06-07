@@ -14,15 +14,15 @@ pipeline {
                 sh './run_docker.sh'
             }
         }
-        stage('Pushing to Docker Hub') {
-            steps {
-                sh './upload_docker.sh $USER_CREDENTIALS_USR $USER_CREDENTIALS_PSW'
-            }
-        }
-        stage('Deploy') {
-            steps {
-                sh './create_infra.sh'
-            }
-        }
+        // stage('Pushing to Docker Hub') {
+        //     steps {
+        //         sh './upload_docker.sh $USER_CREDENTIALS_USR $USER_CREDENTIALS_PSW'
+        //     }
+        // }
+        // stage('Deploy') {
+        //     steps {
+        //         sh './create_infra.sh'
+        //     }
+        // }
     }
 }

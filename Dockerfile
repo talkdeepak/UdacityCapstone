@@ -1,14 +1,8 @@
-FROM ubuntu:latest
+FROM nginx
 
-WORKDIR /app
+## Step 1:
+RUN rm /usr/share/nginx/html/index.html
 
-ENV TZ=Europe/Minsk
-RUN ln -snf /usr/share/zoneinfo/$TZ /etc/localtime && echo $TZ > /etc/timezone
-RUN apt-get update -y &&\
-    apt-get install apache2 -y
-    
-COPY . index.html /var/www/html/
-
-EXPOSE 80
-
-CMD ["apachectl", "-D", "FOREGROUND"]
+## Step 2:
+# Copy source code to working directory
+COPY index.html /usr/share/nginx/html

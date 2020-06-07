@@ -33,6 +33,8 @@ Resources:
             sudo usermod -aG docker ubuntu
             sudo groupadd docker
             sudo usermod -aG docker $USER
+            su -s $USER
+            docker run hello-world
             docker pull talkdeepak/capstone
             docker run -d -p 80:80 talkdeepak/capstone
         ImageId: ami-0d1cd67c26f5fca19
