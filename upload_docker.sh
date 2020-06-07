@@ -5,13 +5,14 @@
 
 # Step 1:
 # Create dockerpath
-dockerpath=talkdeepak/capstone
+# dockerpath=talkdeepak/capstone
+dockerpath=talkdeepak/captest
 
 # Step 2:  
 # Authenticate & tag
 echo "Docker ID and Image: $dockerpath"
 docker login --username $1 --password $2 
-docker tag capstone $dockerpath:latest
+docker tag caps $dockerpath:latest
 
 # Step 3:
 # Push image to a docker repository
