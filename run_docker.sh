@@ -8,4 +8,4 @@ docker build . -t talkdeepak/capstone:latest
 
 # Step 2: 
 # List docker images, this should list the newly created image also
-# docker image ls
+docker image ls
