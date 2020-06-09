@@ -4,11 +4,11 @@ pipeline {
     }
     agent any
     stages {
-        // stage('Lint HTML') {
-        //     steps {
-        //         sh 'tidy -q -e *.html'
-        //     }
-        // }
+        stage('Lint HTML') {
+            steps {
+                sh 'tidy -q -e *.html'
+            }
+        }
         stage('Building Docker Image') {
             steps {
                 sh './run_docker.sh'
