@@ -1,8 +1,17 @@
-FROM nginx
+# Indicates that the windowsservercore image will be used as the base image.
+FROM mcr.microsoft.com/windows/servercore:ltsc2019
 
-## Step 1:
-RUN rm /usr/share/nginx/html/index.html
+# Metadata indicating an image maintainer.
+LABEL maintainer="talkdeepak@gmail.com"
 
-## Step 2:
-# Copy source code to working directory
-COPY index.html /usr/share/nginx/html
+# Uses dism.exe to install the IIS role.
+RUN dism.exe /online /enable-feature /all /featurename:iis-webserver /NoRestart
+
+# Creates an HTML file and adds content to this file.
+RUN echo "Hello World - Dockerfile" > c:\inetpub\wwwroot\index1.html
+
+# #Expose port 80
+EXPOSE 80
+
+# Sets a command or process that will run each time a container is run from the new image.
+CMD [ "cmd" ]
