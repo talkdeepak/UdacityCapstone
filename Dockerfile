@@ -8,7 +8,7 @@ LABEL maintainer="talkdeepak@gmail.com"
 RUN dism.exe /online /enable-feature /all /featurename:iis-webserver /NoRestart
 
 # Creates an HTML file and adds content to this file.
-RUN echo "Hello World - Dockerfile" > c:\inetpub\wwwroot\index1.html
+RUN echo "Hello World - Dockerfile from Deepak" > c:\inetpub\wwwroot\index1.html
 
 # #Expose port 80
 EXPOSE 80
