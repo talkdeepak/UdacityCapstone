@@ -4,7 +4,7 @@
 
 # Step 1:
 # This is your Docker ID/path
-dockerpath=talkdeepak/capstone
+dockerpath=talkdeepak/udacityfinal
 
 # Step 2
 # Run the Docker Hub container with kubernetes

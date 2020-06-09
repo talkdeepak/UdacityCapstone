@@ -6,7 +6,7 @@
 # Step 1:
 # Create dockerpath
 # dockerpath=talkdeepak/capstone
-dockerpath=talkdeepak/captest
+dockerpath=talkdeepak/udacityfinal
 
 # Step 2:  
 # Authenticate & tag

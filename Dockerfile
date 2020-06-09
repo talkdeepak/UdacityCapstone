@@ -1,17 +1,14 @@
-# Indicates that the windowsservercore image will be used as the base image.
-FROM mcr.microsoft.com/windows/servercore:ltsc2019
+FROM ubuntu:latest
 
-# Metadata indicating an image maintainer.
-LABEL maintainer="talkdeepak@gmail.com"
+WORKDIR /app
 
-# Uses dism.exe to install the IIS role.
-RUN dism.exe /online /enable-feature /all /featurename:iis-webserver /NoRestart
+ENV TZ=Europe/Minsk
+RUN ln -snf /usr/share/zoneinfo/$TZ /etc/localtime && echo $TZ > /etc/timezone
+RUN apt-get update -y &&\
+    apt-get install apache2 -y
+    
+COPY . index.html /var/www/html/
 
-# Creates an HTML file and adds content to this file.
-RUN echo "Hello World - Dockerfile from Deepak" > c:\inetpub\wwwroot\index1.html
-
-# #Expose port 80
 EXPOSE 80
 
-# Sets a command or process that will run each time a container is run from the new image.
-CMD [ "cmd" ]
+CMD ["apachectl", "-D", "FOREGROUND"]
